@@ -1,11 +1,13 @@
 <template>
   <header class="container">
     <nav
-      class="flex justify-between items-center h-16 bg-primary-50 text-primary-500 shadow-sm font-sans relative px-8"
+      class="flex justify-between items-center h-16 bg-primary-950 text-primary-500 shadow-sm font-sans relative px-8"
       role="navigation"
     >
       <div>
-        <NuxtLink to="/" class="text-lg font-sans font-medium">Home</NuxtLink>
+        <NuxtLink to="/" class="text-lg font-sans font-medium">
+          <img src="https://www.suthub.com/_nuxt/img/logo-suthub-white.ab9b576.png" width="150"alt="">
+        </NuxtLink>
         <div class="absolute top-4 right-4 w-56 text-right sm:hidden">
           <HeadlessMenu as="div" class="relative inline-block text-left">
             <div>
@@ -49,7 +51,7 @@
       </div>
       <ul class="gap-4 hidden sm:flex">
         <li v-for="link in links" :key="link.id">
-          <NuxtLink :to="link.url" :class="{'bg-primary-500/100 text-white': $router.currentRoute.value.path == link.url}" class="text-sm font-sans font-medium rounded-md p-2 bg-primary-500/10">{{ link.label }}</NuxtLink>
+          <NuxtLink :to="link.url" :class="$router.currentRoute.value.path == link.url ? 'bg-primary-500 text-white': ' text-white'" class="text-sm font-sans font-medium rounded-md p-2 ">{{ link.label }}</NuxtLink>
         </li>
       </ul>
     </nav>
