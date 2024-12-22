@@ -254,7 +254,7 @@ form {
 }
 
 .form-group {
-  @apply border-b p-4 w-full md:max-w-[50%] lg:max-w-[30%] space-y-2;
+  @apply border-b p-4 w-full md:max-w-[50%] space-y-2;
 }
 
 .toggle-group {
@@ -264,10 +264,18 @@ form {
 input {
   @apply w-full focus:outline-none bg-primary-100 text-primary-600 p-2 placeholder:text-primary-500/50 disabled:bg-slate-100;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  @apply bg-none -z-10;
+}
+
 .error {
   @apply text-red-500 text-sm;
 }
+
 .hint {
   @apply text-primary-400 cursor-pointer text-xs ml-2 gap-1 inline-flex;
 }
+
+
 </style>
