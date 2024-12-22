@@ -262,7 +262,7 @@ form {
 }
 
 input {
-  @apply w-full focus:outline-none bg-primary-100 text-primary-600 p-2 placeholder:text-primary-500/50;
+  @apply w-full focus:outline-none bg-primary-100 text-primary-600 p-2 placeholder:text-primary-500/50 disabled:bg-slate-100;
 }
 .error {
   @apply text-red-500 text-sm;
