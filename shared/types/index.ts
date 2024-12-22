@@ -33,6 +33,7 @@ export interface Field {
   mask?: string;
   type?: string;
   disabled?: boolean;
+  placeholder?: string;
   prepend?: string;
   options?: string[] | ((context: any) => string[]);
   hint?: {
