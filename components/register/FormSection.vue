@@ -208,6 +208,9 @@ const handleFormSubmit = async (values: Record<string, any>) => {
     resumeModal.value.content.monthlyIncome = formatValue(
       resumeModal.value.content.monthlyIncome
     );
+    resumeModal.value.content.birthDate = formatDate(
+      resumeModal.value.content.birthDate
+    );
   } catch (error) {
     console.error("Erro ao validar formulário:", error);
   }
@@ -221,5 +224,10 @@ const formatValue = (val: string) => {
     maximumFractionDigits: 3,
   });
   return formatNumber.format(Number(val));
+};
+
+const formatDate = (val: string) => {
+  const [year, month, day] = val.split('-');
+  return `${day}/${month}/${year}`;
 };
 </script>
