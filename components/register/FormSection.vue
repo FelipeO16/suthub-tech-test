@@ -26,7 +26,7 @@
 
 <script lang="ts" setup>
 import * as Yup from "yup";
-import type { FormSchema, UserData } from "@/shared/types";
+import type { FormSchema, UserData } from "~/shared/types/register";
 
 const formSchema = {
   fields: [

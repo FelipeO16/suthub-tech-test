@@ -125,7 +125,7 @@
 import * as Yup from "yup";
 import { Money3Component } from "v-money3";
 
-import type { Field, FormSchema } from "@/shared/types";
+import type { Field, FormSchema } from "~/shared/types/register";
 
 const initializeFormValues = (fields: Field[]) => {
   return fields.reduce((acc: Record<string, any>, field: Field) => {
