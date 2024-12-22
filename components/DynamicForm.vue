@@ -248,7 +248,7 @@ const emit = defineEmits<{
 }>();
 </script>
 
-<style>
+<style scoped>
 form {
   @apply flex flex-col md:flex-row md:flex-wrap;
 }
@@ -262,7 +262,7 @@ form {
 }
 
 input {
-  @apply w-full focus:outline-none bg-primary-100 text-primary-600 p-2 placeholder:text-primary-500/50 disabled:bg-slate-100;
+  @apply w-full focus:outline-primary-400 bg-primary-100 text-primary-600 p-2 placeholder:text-primary-500/50 disabled:bg-slate-100;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
