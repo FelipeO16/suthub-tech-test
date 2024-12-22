@@ -168,10 +168,10 @@ const formSchema = {
             "Bulldog",
             "Chihuahua",
             "Pastor Alemão",
-            "outro",
+            "Outra",
           ];
         } else if (petType === "gato") {
-          return ["Persa", "Siamês", "Maine Coon", "Sphynx", "Bengal", "outro"];
+          return ["Persa", "Siamês", "Maine Coon", "Sphynx", "Bengal", "Outra"];
         }
         return [];
       },
@@ -181,9 +181,9 @@ const formSchema = {
       label: "Outra raça",
       name: "otherBreed",
       as: "input",
-      conditional: (context) => context?.values?.petBreed === "outro",
+      conditional: (context) => context?.values?.petBreed === "Outra",
       rules: Yup.string().when("petBreed", (petBreed, schema) => {
-        return petBreed[0] === "outro"
+        return petBreed[0] === "Outra"
           ? schema.required("Este campo é obrigatório")
           : schema;
       }),
