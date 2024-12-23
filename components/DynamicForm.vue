@@ -70,7 +70,7 @@
           "
           class="relative py-4"
         >
-          <RegisterSelect
+          <Select
             v-if="resolveOptions(field).length > 0"
             v-model="formValues[field.name]"
             :options="resolveOptions(field)"
