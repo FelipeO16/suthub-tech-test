@@ -10,7 +10,7 @@
         {{ recipe.name }}
       </h5>
       <div class="tags">
-        <RecipeTag v-for="tag in recipe.tags" :key="tag" class="mr-2">{{
+        <RecipeTag v-for="tag in recipe.tags" :key="tag" class="mr-2" @tagSelected="$emit('filterByTag', tag)">{{
           tag
         }}</RecipeTag>
       </div>

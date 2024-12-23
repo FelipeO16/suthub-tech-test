@@ -3,28 +3,67 @@
     <header-menu />
     <main class="container flex flex-col gap-4">
       <div class="w-full">
-        <RecipeSearchRecipes :tags="tags" @search="searchByTags" />
+        <RecipeSearchRecipes
+          :tags="tags"
+          @search="filterByTags"
+          @clearFilters="clearFilters"
+        />
       </div>
-      <RecipeCards :recipes="recipes"  />
-      <!-- <pre>{{ recipes }}</pre> -->
+      <RecipeCards :recipes="recipes" @filterCardsByTag="filterByTag($event)" />
+      <Dialogue
+        :is-open="modal.isModalVisible"
+        @close-modal="closeModal()"
+      >
+        <template #title> {{ modal.modalTitle }} </template>
+        <template #description>
+          {{ modal.modalContent }}
+        </template>
+      </Dialogue>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-const recipes = ref([])
-const tags = await useFetchTags()
+const recipes = ref([]);
+const tags = await useFetchTags();
+
+const modal = ref({
+  isModalVisible: false,
+  modalTitle: "",
+  modalContent: "",
+});
 
 onMounted(async () => {
-  const result = await useFetchRecipes()
-  recipes.value = result.recipes
-})
+  const result = await useFetchRecipes();
+  recipes.value = result.recipes;
+});
 
-const searchByTags = (tags: string[]) => {
-  console.log(tags)
-}
+const filterByTags = async (tags: string[]) => {
+  recipes.value = await getRecipesByTags(tags);
+  if (recipes.value.length === 0) {
+    modal.value = {
+      isModalVisible: true,
+      modalTitle: "Ops!",
+      modalContent: "Nenhum resultado encontrado para a busca.",
+    };
+  }
+};
 
+const closeModal = async () => {
+  modal.value.isModalVisible = false;
+  const result = await useFetchRecipes();
+  recipes.value = result.recipes;
+};
 
+const filterByTag = async (tag: string) => {
+  const { data } = await useFetch(
+    `https://dummyjson.com/recipes/tag/${tag}?&select=name,image,tags`
+  );
+  recipes.value = data.value.recipes;
+};
 
-
+const clearFilters = async () => {
+  const result = await useFetchRecipes();
+  recipes.value = result.recipes;
+};
 </script>

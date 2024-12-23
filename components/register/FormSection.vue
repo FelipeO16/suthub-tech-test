@@ -4,7 +4,7 @@
       <h1 class="text-primary-500 text-2xl font-medium w-full text-center md:text-left px-4">Cadastro de usuário</h1>
     </header>
     <DynamicForm :formSchema="formSchema" @submit="handleFormSubmit" />
-    <RegisterDialogue
+    <Dialogue
       :is-open="resumeModal.visible"
       @close-modal="resumeModal.visible = false"
     >
@@ -20,7 +20,7 @@
           </div>
         </div>
       </template>
-    </RegisterDialogue>
+    </Dialogue>
   </section>
 </template>
 

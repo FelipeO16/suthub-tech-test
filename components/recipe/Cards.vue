@@ -1,15 +1,6 @@
 <template>
   <div class="cards">
-    <RecipeCard v-for="recipe in recipes" :key="recipe.id" :recipe="recipe" />
-    <!-- <div class="card col-span-1" v-for="recipe in recipes" :key="recipe.id">
-      <img :src="recipe.image" alt="Placeholder" class="w-full h-48 object-cover" />
-      <div class="p-4">
-        <h2 class="text-xl font-bold">{{ recipe.name }}</h2>
-        <div class="tags">
-          <RecipeTag v-for="tag in recipe.tags" :key="tag" class="mr-2">{{ tag }}</RecipeTag>
-        </div>
-      </div>
-    </div> -->
+    <RecipeCard v-for="recipe in recipes" :key="recipe.id" :recipe="recipe" @filterByTag="$emit('filterCardsByTag', $event)" />
   </div>
 </template>
 

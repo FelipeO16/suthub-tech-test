@@ -103,12 +103,12 @@
       </div>
     </div>
 
-    <RegisterDialogue :is-open="isModalVisible" @close-modal="closeModal">
+    <Dialogue :is-open="isModalVisible" @close-modal="closeModal">
       <template #title> {{ modalTitle }} </template>
       <template #description>
         {{ modalContent }}
       </template>
-    </RegisterDialogue>
+    </Dialogue>
 
     <div class="submit-button block w-full p-4">
       <button
