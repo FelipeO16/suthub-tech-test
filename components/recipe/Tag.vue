@@ -9,6 +9,6 @@
 
 <script setup lang="ts">
 defineProps<{
-  closeButton: boolean;
+  closeButton?: boolean;
 }>();
 </script>
