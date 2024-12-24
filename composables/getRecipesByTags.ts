@@ -1,9 +1,9 @@
 export default async function (tags: string[]) {
   if (tags.length) {
-    const {data} = await useFetch(
+    const response = await $fetch(
       `https://dummyjson.com/recipes/tag/${tags[0]}?&select=name,image,tags`
     );
-    const recipesByTag = data.value.recipes.filter((recipe) =>
+    const recipesByTag = response.recipes.filter((recipe) =>
       tags.every((tag) => recipe.tags.includes(tag))
     );
     return recipesByTag;
