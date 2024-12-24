@@ -2,10 +2,11 @@
   <div
     class="card max-w-sm bg-white border border-primary-200 rounded-lg shadow"
   >
-    <img class="rounded-t-lg" :src="recipe.image" :alt="recipe.name" />
+    <img class="rounded-t-lg cursor-pointer" :src="recipe.image" :alt="recipe.name" @click="$emit('open')"/>
     <div class="p-5">
       <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-primary-900 "
+        class="mb-2 text-2xl font-bold tracking-tight text-primary-900 cursor-pointer"
+        @click="$emit('open')"
       >
         {{ recipe.name }}
       </h5>

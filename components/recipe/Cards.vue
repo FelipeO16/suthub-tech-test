@@ -1,6 +1,6 @@
 <template>
   <div class="cards">
-    <RecipeCard v-for="recipe in recipes" :key="recipe.id" :recipe="recipe" @filterByTag="$emit('filterCardsByTag', $event)" />
+    <RecipeCard v-for="recipe in recipes" :key="recipe.id" :recipe="recipe" @filterByTag="$emit('filterCardsByTag', $event)" @open="$emit('open-card', recipe.id)" />
   </div>
 </template>
 
