@@ -1,7 +1,11 @@
 <template>
   <div>
     <HeadlessTransitionRoot appear :show="isOpen" as="template">
-      <HeadlessDialog as="div" @close="$emit('close-modal')" class="relative z-10">
+      <HeadlessDialog
+        as="div"
+        @close="$emit('close-modal')"
+        class="relative z-[100]"
+      >
         <HeadlessTransitionChild
           as="template"
           enter="duration-300 ease-out"
@@ -28,7 +32,8 @@
               leave-to="opacity-0 scale-95"
             >
               <HeadlessDialogPanel
-                class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
+                :class="flex ? 'max-w-fit' : 'max-w-md'"
+                class="w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
               >
                 <HeadlessDialogTitle
                   as="h3"
@@ -38,7 +43,7 @@
                 </HeadlessDialogTitle>
                 <div class="mt-2">
                   <p class="text-sm text-gray-500">
-                    <slot name="description"/>
+                    <slot name="description" />
                   </p>
                 </div>
 
@@ -61,5 +66,5 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{ isOpen: boolean }>();
+defineProps<{ isOpen: boolean; flex?: boolean }>();
 </script>
