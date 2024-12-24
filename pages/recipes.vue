@@ -9,7 +9,7 @@
           @clearFilters="clearFilters"
         />
       </div>
-      <RecipeCards :recipes="recipes" @filterCardsByTag="filterByTag($event)" />
+      <RecipeCards :recipes="recipes" @filterCardsByTag="filterByTag($event)" @openCard="openCard" />
       <Dialogue
         :is-open="modal.isModalVisible"
         @close-modal="closeModal()"
@@ -19,6 +19,7 @@
           {{ modal.modalContent }}
         </template>
       </Dialogue>
+      <RecipeViewCard v-if="showRecipe" :recipe="recipe" @close="showRecipe = false" :showRecipe="showRecipe" />
     </main>
   </div>
 </template>
@@ -33,6 +34,9 @@ const modal = ref({
   modalContent: "",
 });
 
+const recipe = ref<Recipe | null>(null);
+const showRecipe = ref(false);
+
 onMounted(async () => {
   const result = await useFetchRecipes();
   recipes.value = result.recipes;
@@ -44,7 +48,7 @@ const filterByTags = async (tags: string[]) => {
     modal.value = {
       isModalVisible: true,
       modalTitle: "Ops!",
-      modalContent: "Nenhum resultado encontrado para a busca.",
+      modalContent: "Nenhum resultado encontrado para a busca, mas você pode tentar novemente usando outras tags",
     };
   }
 };
@@ -65,5 +69,10 @@ const filterByTag = async (tag: string) => {
 const clearFilters = async () => {
   const result = await useFetchRecipes();
   recipes.value = result.recipes;
+};
+
+const openCard = async (recipeId: Recipe) => {
+  recipe.value = await getRecipeById(recipeId);
+  showRecipe.value = true
 };
 </script>
