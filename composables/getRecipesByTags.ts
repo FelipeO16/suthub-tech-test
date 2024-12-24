@@ -1,5 +1,4 @@
 export default async function (tags: string[]) {
-  const recipes = ref([]);
   if (tags.length) {
     const {data} = await useFetch(
       `https://dummyjson.com/recipes/tag/${tags[0]}?&select=name,image,tags`
