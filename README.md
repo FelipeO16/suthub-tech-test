@@ -1,4 +1,4 @@
-# Aplicativo Web - Teste SUTHUB
+# Teste SUTHUB
 
 Este repositório contém a solução para o teste da SUTHUB, desenvolvido utilizando **Vue 3**, **Nuxt 3**, **Headless UI**, **TailwindCSS** e **TypeScript**. A aplicação é responsiva e cumpre todos os requisitos estabelecidos no desafio. Abaixo, segue uma descrição detalhada das funcionalidades implementadas e instruções para execução.
 
@@ -90,8 +90,8 @@ Utiliza a API de Users (https://dummyjson.com/docs/users) para:
 ### Passos
 1. Clone este repositório:
    ```bash
-   git clone <URL_DO_REPOSITORIO>
-   cd <NOME_DO_REPOSITORIO>
+   git clone https://github.com/FelipeO16/suthub-tech-test.git
+   cd suthub-tech-test
    ```
 
 2. Instale as dependências:
@@ -121,9 +121,6 @@ Utiliza a API de Users (https://dummyjson.com/docs/users) para:
    yarn generate
    ```
 
-### Deploy
-A aplicação foi implantada utilizando o **Nuxt Hub**, garantindo acessibilidade online e gerenciamento de build otimizado.
-
 ## Demonstração
 A aplicação está disponível online para navegação através do link principal:
 
@@ -136,11 +133,6 @@ Você também pode acessar as páginas individualmente:
 - Página de usuários: [https://suthub-tech-test.nuxt.dev/search](https://suthub-tech-test.nuxt.dev/search)
 
 ### Responsivo
-![image](https://github.com/user-attachments/assets/2dad3c21-2138-4d11-9cbe-121183d39327)![image](https://github.com/user-attachments/assets/7a43d7a3-85f7-4a21-872e-b470c07f5c0f)![image](https://github.com/user-attachments/assets/924460db-03d7-443d-9fc0-309cf3d60a2c)
+![image](https://github.com/user-attachments/assets/88ff889f-6597-4a91-ab3f-bbe60b81afe8)
 
-
-
-
-## Licença
-Este projeto está licenciado sob a [MIT License](LICENSE).
 
