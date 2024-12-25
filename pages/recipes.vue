@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col items-center gap-4 relative bg-primary-100">
+  <div class="w-full flex flex-col items-center gap-4 relative ">
     <header-menu />
     <main class="container flex flex-col gap-4">
       <div class="w-full">
