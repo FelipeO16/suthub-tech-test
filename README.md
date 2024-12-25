@@ -40,7 +40,6 @@ Utiliza a API de Recipes (https://dummyjson.com/docs/recipes) para:
   - Nome da receita
   - Tags
 - Permitir filtro por tags associadas às receitas:
-  - Exibe tags em ordem alfabética
   - Implementa busca funcional de tags
 
 Ao clicar em uma receita, apresenta-se uma modal ou página com:
