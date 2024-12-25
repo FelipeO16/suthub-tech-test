@@ -28,7 +28,7 @@
               
           </td>
           <td class="px-4 py-2 ">
-            <a :href="`https://www.google.com/maps?q=${user.address.coordinates.lat},${user.address.coordinates.lng}`" class="bg-primary-100 text-primary-700 text-sm p-2 rounded-md flex w-fit items-center gap-2">
+            <a :href="`https://www.google.com/maps?q=${user.address.coordinates.lat},${user.address.coordinates.lng}`" target="_blank" class="bg-primary-100 text-primary-700 text-sm p-2 rounded-md flex w-fit items-center gap-2">
               Ver no mapa <Icon name="material-symbols:map-search" class="text-primary-500 text-lg" />
             </a>
           </td>
